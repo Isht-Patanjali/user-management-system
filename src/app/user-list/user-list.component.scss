@@ -1,0 +1,33 @@
+.user-table {
+    padding: 2rem;
+    height: 90%;
+}
+
+table {
+    width: 100%;
+}
+
+.add-user-button {
+    position: fixed;
+    bottom: 12px;
+    left: 45%;
+    z-index: 1000;
+}
+
+.search {
+    text-align: center;
+
+    input {
+        width: 60%;
+        font-size: large;
+        padding: 10px;
+        margin-bottom: 4px;
+    }
+}
+
+.no-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+}

@@ -1,0 +1,30 @@
+<div class="add-user-main">
+    <div class="add-user">
+        <h1>{{receivedData ? receivedData.name : 'Add'}} User</h1>
+        <form class="add-user-form" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" placeholder="Enter Name">
+                <mat-error *ngIf="addUserForm.get('name').hasError('required')">Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Enter Email">
+                <mat-error *ngIf="addUserForm.get('email').hasError('required')">Email is required</mat-error>
+                <mat-error *ngIf="addUserForm.get('email').hasError('email')">Invalid email format</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Role</mat-label>
+                <input matInput formControlName="role" placeholder="Enter Role">
+                <mat-error *ngIf="addUserForm.get('role').hasError('required')">Role is required</mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">{{receivedData ? receivedData.name : 'Add'}} User</button>
+        </form>
+
+        <!-- <button (click)="getUser()" mat-raised-button color="primary">Get User</button> -->
+
+    </div>
+</div>
