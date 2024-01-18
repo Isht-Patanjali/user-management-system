@@ -31,18 +31,18 @@ export class AddUserComponent implements OnInit {
 
   onSubmit(): void {
     if (this.addUserForm.valid) {
-      if(this.receivedData.name === 'Edit') {
+      if(this.receivedData?.['name'] === 'Edit') {
         this.receivedData.user.name = this.addUserForm.value.name;
         this.receivedData.user.email = this.addUserForm.value.email;
         this.receivedData.user.role = this.addUserForm.value.role;
         this.userService.deleteUser(this.receivedData.user, true);
         this.addUserForm.reset();
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/user-list');
       } else {
         const newUser: User = this.addUserForm.value;
         this.userService.addUser(newUser);
         this.addUserForm.reset();
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/user-list');
       }
     }
   }

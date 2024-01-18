@@ -6,6 +6,10 @@ import { AddUserComponent } from './add-user/add-user.component';
 const routes: Routes = [
   {
     path: '',
+    component: AddUserComponent
+  },
+  {
+    path: 'user-list',
     component: UserListComponent
   },
   {
